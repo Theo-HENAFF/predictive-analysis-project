@@ -2,7 +2,7 @@ clear;
 close all;
 clc;
 
-data = readtable('data_KOR.csv');
+data = readtable('DP_LIVE_06122019165024876.csv');
 data(2,:); %Pour avoir la 2eme ligne en entier
 data(:,2); %Pour avoir la 2eme colonne en entier
 KOR_Values = data.Value;
@@ -18,7 +18,7 @@ modele_armax = armax(KOR_1968_2015,[K,K]);
 prediction_AR = forecast(modele_ar,KOR_1968_2015,22);
 prediction_ARMAX = forecast(modele_armax,KOR_1968_2015,22);
 
-x=(1:206);
+x=(1:lengh(KOR_Values));
 
 
 subplot(1,2,1);
